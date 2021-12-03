@@ -1,0 +1,4 @@
+validate body from post request is good or not
+install prettier and eslint
+make a pre-commit hook for husky
+commit & push to github
