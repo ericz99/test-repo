@@ -1,14 +1,16 @@
 import { Schema } from 'jsonschema';
 
-export const postQuerySchema: Schema = {
-    type: 'object',
-    properties: {
-        search: {
-            type: 'string',
-        },
-        location: {
-            type: 'string',
-        },
+const postQuerySchema: Schema = {
+  type: 'object',
+  properties: {
+    search: {
+      type: 'string'
     },
-    required: ['search'],
+    location: {
+      type: 'string'
+    }
+  },
+  required: ['search']
 };
+
+export default postQuerySchema;
