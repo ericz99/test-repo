@@ -8,3 +8,8 @@ commit & push to github
 add sequelize lib
 create the table schema in code
 insert data, and get the data
+
+-------------------------
+
+reverse express api into open api basically an YAML file
+
