@@ -1,1 +1,4 @@
 some feature file
+
+// some bug in the code
+// git commit -am "stage an already tracked"
