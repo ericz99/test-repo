@@ -1,3 +1,5 @@
 some feature file
 
 // we fixed the bug
+
+// we also fixed this bug as well
