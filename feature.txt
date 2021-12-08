@@ -1,1 +1,3 @@
 some feature file
+
+// we fixed the bug
