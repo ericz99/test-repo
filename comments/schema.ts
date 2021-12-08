@@ -1,14 +1,23 @@
 import { Schema } from 'jsonschema';
 
 export const commentBodySchema: Schema = {
-    type: 'object',
-    properties: {
-        id: {
-            type: 'string',
-        },
-        data: {
-            type: 'string',
-        },
+  type: 'object',
+  properties: {
+    postId: {
+      type: 'number',
+      required: true
     },
-    required: ['data'],
+    name: {
+      type: 'string',
+      required: true
+    },
+    body: {
+      type: 'string',
+      required: true
+    },
+    email: {
+      type: 'string',
+      required: true
+    }
+  }
 };

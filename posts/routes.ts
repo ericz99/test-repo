@@ -2,7 +2,7 @@ import { Router } from 'express';
 import { getAllPost, getOnePost } from './controllers';
 
 import { isValidQuery } from '../middlewares/isValidQuery';
-import { postQuerySchema } from './schema';
+import postQuerySchema from './schema';
 
 const router = Router();
 

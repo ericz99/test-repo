@@ -2,3 +2,9 @@ validate body from post request is good or not
 install prettier and eslint
 make a pre-commit hook for husky
 commit & push to github
+
+-------------------------
+
+add sequelize lib
+create the table schema in code
+insert data, and get the data
