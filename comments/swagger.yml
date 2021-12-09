@@ -1,0 +1,127 @@
+openapi: 3.0.1
+info:
+  description: Sample Express API in OpenAPI
+  version: '1.0.0'
+  title: Express API in OpenAPI
+  termsOfService: http://swagger.io/terms/
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+servers:
+  - url: http://localhost:5000
+paths:
+  /comments:
+    get:
+      tags:
+        - comments
+      description: Return all comments
+      summary: Get all comments
+      operationId: getAllComments
+      responses:
+        200:
+          description: return all comments
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Comment'
+        404:
+          description: Not found!
+          content: {}
+  /comments/{id}:
+    get:
+      tags:
+        - get one comment
+      description: Return one comment
+      parameters:
+        - name: id
+          in: path
+          description: Fetch a comment by id
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        200:
+          description: return a comment
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Comment'
+        404:
+          description: Not found!
+          content: {}
+  /comments/comment/{id}:
+    get:
+      tags:
+        - get one comment from database
+      description: Return one comment from database
+      parameters:
+        - name: id
+          in: path
+          description: Fetch a comment by id from the database
+          required: true
+          schema:
+            type: integer
+            format: int64
+      responses:
+        200:
+          description: return a comment
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Comment'
+        404:
+          description: Not found!
+          content: {}
+  /comments/create:
+    post:
+      tags:
+        - create a comment
+      description: Create a comment and insert into the database
+      requestBody:
+        description: Comment object is needed
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Comment'
+      responses:
+        200:
+          description: return success response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SuccessStatus'
+        404:
+          description: Not found!
+          content: {}
+
+components:
+  schemas:
+    Comment:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+        postId:
+          type: integer
+          format: int64
+        name:
+          type: string
+          example: 'My name is eric'
+        body:
+          type: string
+          example: 'My main body'
+        email:
+          type: string
+          example: 'test123@yahoo.com'
+    SuccessStatus:
+      type: object
+      properties:
+        status:
+          type: string
+          example: success
+        data:
+          $ref: '#/components/schemas/Comment'
