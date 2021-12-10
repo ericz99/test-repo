@@ -1,0 +1,17 @@
+type: object
+properties:
+  id:
+    type: integer
+    format: int64
+  postId:
+    type: integer
+    format: int64
+  name:
+    type: string
+    example: 'My name is eric'
+  body:
+    type: string
+    example: 'My main body'
+  email:
+    type: string
+    example: 'test123@yahoo.com'

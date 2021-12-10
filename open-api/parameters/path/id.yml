@@ -1,0 +1,7 @@
+name: id
+in: path
+description: Fetch a comment by id from the database
+required: true
+schema:
+  type: integer
+  format: int64

@@ -1,27 +1,38 @@
 import express from 'express';
-import swaggerUi from 'swagger-ui-express';
-import YAML from 'yamljs';
+import * as exegesisExpress from 'exegesis-express';
+import path from 'path';
+// import swaggerUi from 'swagger-ui-express';
+// import YAML from 'yamljs';
 
-import PostsRouter from './posts/routes';
-import CommentsRouter from './comments/routes';
+// import PostsRouter from './posts/routes';
+// import CommentsRouter from './comments/routes';
 
 import NotFound from './middlewares/notFound';
 import ErrorHandler from './middlewares/errorHandler';
 
-const swaggerCommentDocument = YAML.load('./comments/swagger.yml');
-const swaggerPostDocument = YAML.load('./posts/swagger.yml');
+// const swaggerCommentDocument = YAML.load('./comments/swagger.yml');
+// const swaggerPostDocument = YAML.load('./posts/swagger.yml');
 
-export const createApp = () => {
+export const createApp = async () => {
   const app = express();
 
   app.use(express.json());
   app.use(express.urlencoded({ extended: false }));
 
-  app.use('/api-comments-docs', swaggerUi.serveFiles(swaggerCommentDocument), swaggerUi.setup(swaggerCommentDocument));
-  app.use('/api-posts-docs', swaggerUi.serveFiles(swaggerPostDocument), swaggerUi.setup(swaggerPostDocument));
+  const options = {
+    controllers: path.resolve(__dirname, './controllers'),
+    controllersPattern: '**/*.@(ts|js)'
+  };
 
-  app.use('/posts', PostsRouter);
-  app.use('/comments', CommentsRouter);
+  const exegesisMiddleware = await exegesisExpress.middleware(path.resolve(__dirname, 'open-api', 'api', 'openapi.yml'), options);
+
+  app.use(exegesisMiddleware);
+
+  //   app.use('/api-comments-docs', swaggerUi.serveFiles(swaggerCommentDocument), swaggerUi.setup(swaggerCommentDocument));
+  //   app.use('/api-posts-docs', swaggerUi.serveFiles(swaggerPostDocument), swaggerUi.setup(swaggerPostDocument));
+
+  //   app.use('/posts', PostsRouter);
+  //   app.use('/comments', CommentsRouter);
 
   app.use(ErrorHandler);
   app.use(NotFound);

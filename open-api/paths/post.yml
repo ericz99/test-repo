@@ -1,0 +1,15 @@
+get:
+  tags:
+    - get one post
+  description: Return one post
+  parameters:
+    - $ref: '../parameters/path/id.yml'
+  responses:
+    200:
+      description: return a post
+      content:
+        application/json:
+          schema:
+            $ref: '../schemas/Post.yml'
+    404:
+      $ref: '../responses/NotFound.yml'

@@ -1,0 +1,18 @@
+get:
+  x-exegesis-controller: commentController
+  operationId: getOneComments
+  tags:
+    - comments
+  description: Return all comments
+  summary: Get all comments
+  responses:
+    200:
+      description: return all comments
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '../schemas/Comment.yml'
+    404:
+      $ref: '../responses/NotFound.yml'

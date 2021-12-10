@@ -1,0 +1,31 @@
+openapi: 3.0.1
+info:
+  description: Sample Express API in OpenAPI
+  version: '1.0.0'
+  title: Express API in OpenAPI
+  termsOfService: http://swagger.io/terms/
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+servers:
+  - url: http://localhost:5000
+paths:
+  /comments:
+    $ref: '../paths/comments.yml'
+  /comments/{id}:
+    $ref: '../paths/comment.yml'
+  /comments/comment/{id}:
+    $ref: '../paths/comment.yml'
+  /comments/create:
+    $ref: '../paths/createComment.yml'
+  /posts:
+    $ref: '../paths/posts.yml'
+  /post/{id}:
+    $ref: '../paths/post.yml'
+components:
+  parameters:
+    $ref: '../parameters/_index.yml'
+  schemas:
+    $ref: '../schemas/_index.yml'
+  responses:
+    $ref: '../responses/_index.yml'

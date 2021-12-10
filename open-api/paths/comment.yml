@@ -1,0 +1,17 @@
+get:
+  x-exegesis-controller: commentController
+  operationId: getOneComment
+  tags:
+    - get one comment
+  description: Return one comment
+  parameters:
+    - $ref: '../parameters/path/id.yml'
+  responses:
+    200:
+      description: return a comment
+      content:
+        application/json:
+          schema:
+            $ref: '../schemas/Comment.yml'
+    404:
+      $ref: '../responses/NotFound.yml'

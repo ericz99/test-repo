@@ -1,0 +1,18 @@
+get:
+  x-exegesis-controller: postController
+  operationId: getAllPost
+  tags:
+    - posts
+  description: Return all posts
+  summary: Get all posts
+  responses:
+    200:
+      description: return all posts
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: '../schemas/Post.yml'
+    404:
+      $ref: '../responses/NotFound.yml'

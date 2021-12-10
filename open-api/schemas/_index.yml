@@ -1,0 +1,6 @@
+Comment:
+  $ref: './Comment.yml'
+Post:
+  $ref: './Post.yml'
+SuccessStatus:
+  $ref: './SuccessStatus.yml'

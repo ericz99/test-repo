@@ -1,0 +1,5 @@
+description: Comment object is needed
+content:
+  application/json:
+    schema:
+      $ref: '../schemas/Comment.yml'

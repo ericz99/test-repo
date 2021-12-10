@@ -1,0 +1,17 @@
+post:
+  x-exegesis-controller: commentController
+  operationId: createComment
+  tags:
+    - create a comment
+  description: Create a comment and insert into the database
+  requestBody:
+    $ref: '../request-bodies/CreateCommentBody.yml'
+  responses:
+    200:
+      description: return success response
+      content:
+        application/json:
+          schema:
+            $ref: '../schemas/SuccessStatus.yml'
+    404:
+      $ref: '../responses/NotFound.yml'

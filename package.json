@@ -18,6 +18,9 @@
   "dependencies": {
     "axios": "^0.24.0",
     "dotenv": "^10.0.0",
+    "exegesis": "^4.1.0",
+    "exegesis-express": "^3.0.0",
+    "exegesis-plugin-swagger-ui-express": "^1.0.9",
     "express": "^4.17.1",
     "ioredis": "^4.28.2",
     "jsonschema": "^1.4.0",
