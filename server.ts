@@ -1,5 +1,6 @@
 import express from 'express';
 import * as exegesisExpress from 'exegesis-express';
+// import exegesisSwaggerUIPlugin from 'exegesis-plugin-swagger-ui-express';
 import path from 'path';
 // import swaggerUi from 'swagger-ui-express';
 // import YAML from 'yamljs';
@@ -22,6 +23,15 @@ export const createApp = async () => {
   const options = {
     controllers: path.resolve(__dirname, './controllers'),
     controllersPattern: '**/*.@(ts|js)'
+    // plugins: [
+    //   exegesisSwaggerUIPlugin({
+    //     app,
+    //     path: '/api-docs',
+    //     swaggerUIOptions: {
+    //       explorer: true
+    //     }
+    //   })
+    // ]
   };
 
   const exegesisMiddleware = await exegesisExpress.middleware(path.resolve(__dirname, 'open-api', 'api', 'openapi.yml'), options);

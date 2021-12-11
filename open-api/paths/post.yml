@@ -1,4 +1,6 @@
 get:
+  x-exegesis-controller: postController
+  operationId: getOnePost
   tags:
     - get one post
   description: Return one post

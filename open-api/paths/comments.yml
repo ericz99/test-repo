@@ -1,6 +1,6 @@
 get:
   x-exegesis-controller: commentController
-  operationId: getOneComments
+  operationId: getAllComment
   tags:
     - comments
   description: Return all comments

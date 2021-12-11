@@ -1,2 +1,4 @@
 id:
   $ref: './path/id.yml'
+stringId:
+  $ref: './path/stringId.yml'

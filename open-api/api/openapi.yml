@@ -15,7 +15,7 @@ paths:
   /comments/{id}:
     $ref: '../paths/comment.yml'
   /comments/comment/{id}:
-    $ref: '../paths/comment.yml'
+    $ref: '../paths/commentsComment.yml'
   /comments/create:
     $ref: '../paths/createComment.yml'
   /posts:
