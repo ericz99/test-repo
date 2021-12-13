@@ -9,7 +9,7 @@ interface PathParams {
 exports.getAllPost = async (context: ExegesisContext) => {
   try {
     const data = await getAllData();
-    return context.res.status(200).json({ data });
+    return context.res.json({ data });
   } catch (e) {
     throw context.makeError(500, 'Failed to get all post');
   }

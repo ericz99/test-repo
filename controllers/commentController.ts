@@ -52,7 +52,7 @@ exports.createComment = async (context: ExegesisContext) => {
     // # set data to redis
     const data = await createCommentData({ data: bodyData });
     // return response
-    return context.res.status(200).json({
+    return context.res.json({
       status: 'success',
       data: data
     });

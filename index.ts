@@ -5,7 +5,7 @@ import { createApp } from './server';
   const { app } = await createApp();
   const httpServer = http.createServer(app);
 
-  httpServer.listen(5000, () => {
-    console.log('running on port 5000');
+  httpServer.listen(8080, () => {
+    console.log('running on port 8080');
   });
 })();
