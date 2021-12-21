@@ -53,5 +53,3 @@ export const createApp = async () => {
 };
 
 // first commit
-
-// second commit
