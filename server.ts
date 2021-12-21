@@ -51,9 +51,3 @@ export const createApp = async () => {
     app
   };
 };
-
-// first
-
-// second
-
-// third
