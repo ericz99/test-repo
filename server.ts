@@ -53,5 +53,3 @@ export const createApp = async () => {
 };
 
 // this is first branch commit
-
-// this is second branch commit
